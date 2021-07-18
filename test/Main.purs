@@ -2,6 +2,7 @@ module Test.Main where
 
 import Prelude
 
+import Data.Maybe (Maybe(..))
 import Effect (Effect)
 import Effect.Aff (launchAff_)
 import Effect.Class (liftEffect)
@@ -29,6 +30,7 @@ createMessage = do
     , bcc: [ "BCCRecipient <bccrecipient@example.com>"]
     , subject: "Test Subject"
     , text: "Go to https://github.com"
+    , html: Nothing
     , attachments:
         [ FileFromString { filename: "test.txt", content: "TEST" }
         , FileFromPath { filename: "image1.png", path: "./test/dummy.png" }
